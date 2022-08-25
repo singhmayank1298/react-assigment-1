@@ -3,14 +3,18 @@ import ExpenseDate from './ExpenseDate'
 import ExpenseDetail from './ExpenseDetail'
 
 
-function ExpenseItem(props){
+
+const ExpenseItem=(props)=>{
  
-    return (<div className="expense-item">
+    return (
+    
+    <div className="expense-item">
        < ExpenseDate date={props.date}></ExpenseDate>
        <ExpenseDetail title={props.title} amount={props.amount} Location={props.Location} ></ExpenseDetail>
       
-        
-    </div>)
+        </div>
+   
+    )
 }
 
 

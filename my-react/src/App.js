@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import ExpenseItem from './components/Expenseitems';
+import ExpenseItem from './components/Expenses/ExpenseItem';
+import Card from './components/UI/Card';
 
 
-function App() {
+const App=()=> {
   const expenses=[
     {
        id:'e1',
@@ -42,7 +43,8 @@ function App() {
    
   ]
   return (
-    <div className="App">
+    
+    <Card className="App">
     <h1>Expense Items</h1>
     {expenses.map((x)=>{
       return(<ExpenseItem title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)
@@ -51,7 +53,8 @@ function App() {
     
     
 
-  </div>
+  </Card>
+  
   );
 }
 
