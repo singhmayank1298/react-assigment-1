@@ -15,7 +15,7 @@ const ExpenseItem=(props)=>{
 document.getElementById('m').remove()
     console.log('click')
  }
- 
+
  const changeTitle=()=>{
 setTitle('update')
 console.log(title)
@@ -40,4 +40,4 @@ console.log(title)
 }       
 
 
-export default ExpenseItem
+export default ExpenseItem 
