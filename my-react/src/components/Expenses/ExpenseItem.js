@@ -10,7 +10,7 @@ const ExpenseItem=(props)=>{
 
    const [title,setTitle]=useState(props.title)
    const [amount,setAmount]=useState(props.amount)
-
+//console.log(props.title)
  const clickHandler= ()=>{
 document.getElementById('m').remove()
     console.log('click')

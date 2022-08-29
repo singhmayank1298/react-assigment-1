@@ -1,62 +1,62 @@
 import  './ExpenseForm.css'
 
 import React, { useState } from 'react'
-import App from '../../App'
-import ExpenseItem from '../Expenses/ExpenseItem'
 
 
 
-const ExpenseForm =()=>{
+
+const ExpenseForm =(props)=>{
 
 const [enteredtitle,setenteredtitle]=useState('')
 const [enteredAmount,setenteredAmount ]=useState('')
 const [enteredDAte,setenteredDate]=useState('')
 
-const Add1= (event)=>{
+const titleChangeHandler= (event)=>{
 setenteredtitle(event.target.value)
 console.log(event.target.value)
 }
 
-const Add2= (event)=>{
+const amountChangeHandler= (event)=>{
 setenteredAmount(event.target.value)
 console.log(event.target.value)
     }
 
- const Add3= (event)=>{
+ const dateChangeHandler= (event)=>{
  setenteredDate(event.target.value)
  console.log(event.target.value)
         }
 
         const submit=(e)=>{
         e.preventDefault();
-            const obj={
+            const expenseData={
                 title1:enteredtitle,
                 amount:enteredAmount,
                 date:enteredDAte
             }
-            console.log(obj)
+            props.onSaveExpenseData(expenseData)
+            setenteredAmount('')
+            setenteredDate('')
+            setenteredtitle('')
                }     
 
-    return <div className="new-expense">
-
-        <form>
+return     <form>
             <div className="new-expense__controls">
             <div>
             <label>Expense Item</label>
-            <input onChange={Add1} type="text"></input>
+            <input onChange={titleChangeHandler} value={enteredtitle} type="text"></input>
             </div>
             <div>
             <label>Amount</label>
-            <input onChange={Add2} type="number"></input>
+            <input onChange={amountChangeHandler}value={enteredAmount} type="number"></input>
             </div>
             <div>
             <label>Date</label>
-            <input onChange={Add3} type ="date"></input>
+            <input onChange={dateChangeHandler} value={enteredDAte} type ="date"></input>
             </div>
             </div>
             <button onClick={submit} type="submit">SUBMIT</button>
         </form>
-    </div>
+    
 }
 
 

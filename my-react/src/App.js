@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/UI/Card';
-import ExpenseForm from './components/NewExpense/ExpenseForm';
+import NewExpense from './components/NewExpense/NewExpense';
 
 
 const App=()=> {
@@ -43,8 +43,16 @@ const App=()=> {
 }
    
   ]
+
+  const addExpenseHendeler=(expense)=>{
+const obj={
+  ...expense
+}
+console.log(obj)
+  }
+
   return (<div>
-    <ExpenseForm></ExpenseForm>
+    <NewExpense  onAddExpense={addExpenseHendeler} />
     <Card className="App">
 
     <h1>Expense Items</h1>

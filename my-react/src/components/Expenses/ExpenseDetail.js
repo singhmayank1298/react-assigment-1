@@ -10,7 +10,7 @@ const ExpenseDetail=(props)=>{
     
     return<div id="m" className="expense-item__description">
     <h2 >{props.title}</h2>
-    
+    {console.log(props)}
     <div className="expense-item__price">{props.amount}</div>
     <div className="expense-item__price">Location={props.Location}</div>
     </div>
