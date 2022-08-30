@@ -4,6 +4,7 @@ import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/UI/Card';
 import NewExpense from './components/NewExpense/NewExpense';
 import  {useState} from 'react';
+import ExpensesFilter from './components/Expenses/ExpensesFilter';
 
 
 const App=()=> {
@@ -52,12 +53,20 @@ const obj={
 setexpenses([...expenses,obj])
 console.log(expenses)
   }
+  const [FilterYear,setFilterYear]=useState('2020')  // two way binding
+  const onFilterHendeler=(FilterValue)=>{
+     console.log(FilterValue)
+     setFilterYear(FilterValue)
+  }
+
 
   return (<div>
+   
     <NewExpense  onAddExpense={addExpenseHendeler} />
     <Card className="App">
 
     <h1>Expense Items</h1>
+    <ExpensesFilter Selected={FilterYear} onChangeFilter={onFilterHendeler}></ExpensesFilter>
     {expenses.map((x)=>{
       return(<ExpenseItem title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)
 

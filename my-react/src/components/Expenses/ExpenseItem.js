@@ -3,6 +3,7 @@ import ExpenseDate from './ExpenseDate'
 import ExpenseDetail from './ExpenseDetail'
 import Card from '../UI/Card'
 import { useState } from 'react'
+import ExpensesFilter from './ExpensesFilter'
 
 
 
@@ -26,8 +27,7 @@ console.log(title)
    console.log(amount)
     }
 
-    return( <Card>
-    <div  id="m" className="expense-item">
+    return   <div  id="m" className="expense-item">
        < ExpenseDate date={props.date}></ExpenseDate>
        <ExpenseDetail  title={title} amount={amount} Location={props.Location} ></ExpenseDetail>
       <button onClick={clickHandler}>Delete Expense</button>
@@ -35,7 +35,8 @@ console.log(title)
       <button onClick={changeAmount}>Change Amount</button>
         </div>
    
-        </Card> )
+        
+   
 }       
 
 
