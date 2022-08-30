@@ -26,17 +26,16 @@ console.log(title)
    console.log(amount)
     }
 
-    return (
-    <Card>
-    <div  id="m"className="expense-item">
+    return( <Card>
+    <div  id="m" className="expense-item">
        < ExpenseDate date={props.date}></ExpenseDate>
        <ExpenseDetail  title={title} amount={amount} Location={props.Location} ></ExpenseDetail>
       <button onClick={clickHandler}>Delete Expense</button>
       <button onClick={changeTitle}>Change Title</button>
       <button onClick={changeAmount}>Change Amount</button>
         </div>
-   </Card>
-    )
+   
+        </Card> )
 }       
 
 

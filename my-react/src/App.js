@@ -3,10 +3,11 @@ import './App.css';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/UI/Card';
 import NewExpense from './components/NewExpense/NewExpense';
+import  {useState} from 'react';
 
 
 const App=()=> {
-  const expenses=[
+  const [expenses,setexpenses]=useState([
     {
        id:'e1',
        title1:'Toilet Paper',
@@ -42,13 +43,14 @@ const App=()=> {
   location: 'lucknow'
 }
    
-  ]
+  ])
 
-  const addExpenseHendeler=(expense)=>{
+const addExpenseHendeler=(expense)=>{
 const obj={
   ...expense
 }
-console.log(obj)
+setexpenses([...expenses,obj])
+console.log(expenses)
   }
 
   return (<div>

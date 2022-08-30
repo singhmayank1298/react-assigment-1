@@ -8,7 +8,7 @@ const ExpenseDetail=(props)=>{
 // React.createElement('div',{className:"expense-item__price"},"Location=",props.Location));
 
     
-    return<div id="m" className="expense-item__description">
+    return<div  className="expense-item__description">
     <h2 >{props.title}</h2>
     {console.log(props)}
     <div className="expense-item__price">{props.amount}</div>

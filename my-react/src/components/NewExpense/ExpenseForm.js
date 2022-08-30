@@ -31,7 +31,7 @@ console.log(event.target.value)
             const expenseData={
                 title1:enteredtitle,
                 amount:enteredAmount,
-                date:enteredDAte
+                date:new Date(enteredDAte)
             }
             props.onSaveExpenseData(expenseData)
             setenteredAmount('')
