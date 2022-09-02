@@ -62,7 +62,13 @@ console.log(Dummy_Expense)
      setFilterYear(FilterValue)
   }
 
+  const filteredExpnses = Expenses.filter((expense) => {
+    if(expense.date.getFullYear().toString() === FilterYear){
+    return expense
+    }
+  });
 
+  
   return (<div>
    
     <NewExpense  onAddExpense={addExpenseHendeler} />
