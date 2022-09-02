@@ -9,7 +9,7 @@ const ExpenseForm =(props)=>{
 
 const [enteredtitle,setenteredtitle]=useState('')
 const [enteredAmount,setenteredAmount ]=useState('')
-const [enteredDAte,setenteredDate]=useState('')
+const [enteredDate,setenteredDate]=useState('')
 
 const titleChangeHandler= (event)=>{
 setenteredtitle(event.target.value)
@@ -31,7 +31,7 @@ console.log(event.target.value)
             const expenseData={
                 title1:enteredtitle,
                 amount:enteredAmount,
-                date:new Date(enteredDAte)
+                date:new Date(enteredDate)
             }
             props.onSaveExpenseData(expenseData)
             setenteredAmount('')
@@ -51,7 +51,7 @@ return     <form>
             </div>
             <div>
             <label>Date</label>
-            <input onChange={dateChangeHandler} value={enteredDAte} type ="date"></input>
+            <input onChange={dateChangeHandler} value={enteredDate} type ="date"></input>
             </div>
             </div>
             <button onClick={submit} type="submit">SUBMIT</button>
