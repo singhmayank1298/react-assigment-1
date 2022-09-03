@@ -6,6 +6,7 @@ import NewExpense from './components/NewExpense/NewExpense';
 import  {useState} from 'react';
 import ExpensesFilter from './components/Expenses/ExpensesFilter';
 import ExpenseList from './components/Expenses/ExpenseList';
+import FinelCall from './components/NewExpense/FinelCall';
 
 
 
@@ -52,7 +53,7 @@ const [Expenses,setExpenses]= useState(Dummy_Expense)
 
 const addExpenseHendeler=(expense)=>{
 
-//setExpenses([obj, ...Expenses])// we can use like tjis also but it is not correct
+//setExpenses([obj, ...Expenses])// we can use like this also but it is not correct
 setExpenses((preExpenses)=>{
   return [expense,...preExpenses]
 })
@@ -76,7 +77,7 @@ console.log(Dummy_Expense)
 
   return (<div>
    
-    <NewExpense  onAddExpense={addExpenseHendeler} />
+    <FinelCall   onAddExpense={addExpenseHendeler} />
    
    <li> <Card className="App">
 
