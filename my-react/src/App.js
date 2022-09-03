@@ -7,6 +7,7 @@ import  {useState} from 'react';
 import ExpensesFilter from './components/Expenses/ExpensesFilter';
 
 
+
 const Dummy_Expense=[
   {
      id:'e1',
@@ -68,7 +69,25 @@ console.log(Dummy_Expense)
     }
   });
 
+
   
+  let expenseContent= [] 
+  expenseContent.push(<p key="uu">No Expense Found</p>)
+  if(filteredExpnses.length>1){
+    expenseContent=filteredExpnses.map((x)=>{
+    
+      return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)})
+  }
+
+  else if(filteredExpnses.length===1){
+    expenseContent=filteredExpnses.map((x)=>{
+    
+      return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)})
+      expenseContent.push(<p key="yy"> "Only single Expense here. Please add more..."</p>)
+  }
+ 
+  
+
   return (<div>
    
     <NewExpense  onAddExpense={addExpenseHendeler} />
@@ -77,15 +96,22 @@ console.log(Dummy_Expense)
     <h1>Expense Items</h1>
     <ExpensesFilter Selected={FilterYear} onChangeFilter={onFilterHendeler}></ExpensesFilter>
     
-    { 
-     filteredExpnses.map((x)=>{
-     // console.log(x.date.getFullYear().toString())
-     //if(x.date.getFullYear().toString()===FilterYear){
-      return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)
-
-    })
-  }
     
+    {expenseContent}
+    {/* {filteredExpnses.length===0 && <p>No Expense Found</p>}   
+    {filteredExpnses.length>0 &&   filteredExpnses.map((x)=>{
+    
+      return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)})} */}
+
+    {/* { filteredExpnses.length===0 ? (<p>No Expense Found</p>) : (filteredExpnses.map((x)=>{
+//      // console.log(x.date.getFullYear().toString())
+//      //if(x.date.getFullYear().toString()===FilterYear){
+//       return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)
+
+//     }))
+     
+//   }
+// */}
 
   </Card>
   </div>

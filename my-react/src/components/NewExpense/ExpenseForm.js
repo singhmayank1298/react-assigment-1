@@ -37,7 +37,7 @@ console.log(event.target.value)
             setenteredAmount('')
             setenteredDate('')
             setenteredtitle('')
-               }     
+               }  
 
 return     <form>
             <div className="new-expense__controls">
