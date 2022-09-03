@@ -5,6 +5,7 @@ import Card from './components/UI/Card';
 import NewExpense from './components/NewExpense/NewExpense';
 import  {useState} from 'react';
 import ExpensesFilter from './components/Expenses/ExpensesFilter';
+import ExpenseList from './components/Expenses/ExpenseList';
 
 
 
@@ -70,34 +71,20 @@ console.log(Dummy_Expense)
   });
 
 
-  
-  let expenseContent= [] 
-  expenseContent.push(<p key="uu">No Expense Found</p>)
-  if(filteredExpnses.length>1){
-    expenseContent=filteredExpnses.map((x)=>{
-    
-      return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)})
-  }
 
-  else if(filteredExpnses.length===1){
-    expenseContent=filteredExpnses.map((x)=>{
-    
-      return(<ExpenseItem  key={x.id} title={x.title1} amount={x.amount} date={x.date} Location={x.location}> </ExpenseItem>)})
-      expenseContent.push(<p key="yy"> "Only single Expense here. Please add more..."</p>)
-  }
  
-  
 
   return (<div>
    
     <NewExpense  onAddExpense={addExpenseHendeler} />
-    <Card className="App">
+   
+   <li> <Card className="App">
 
     <h1>Expense Items</h1>
     <ExpensesFilter Selected={FilterYear} onChangeFilter={onFilterHendeler}></ExpensesFilter>
     
     
-    {expenseContent}
+    <ExpenseList items={filteredExpnses}/>
     {/* {filteredExpnses.length===0 && <p>No Expense Found</p>}   
     {filteredExpnses.length>0 &&   filteredExpnses.map((x)=>{
     
@@ -113,7 +100,7 @@ console.log(Dummy_Expense)
 //   }
 // */}
 
-  </Card>
+  </Card> </li>
   </div>
   );
 }
