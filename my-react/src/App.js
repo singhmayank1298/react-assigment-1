@@ -7,41 +7,41 @@ import  {useState} from 'react';
 import ExpensesFilter from './components/Expenses/ExpensesFilter';
 import ExpenseList from './components/Expenses/ExpenseList';
 import FinelCall from './components/NewExpense/FinelCall';
-
+import ExpensesChart from './components/Expenses/ExpensesChart';
 
 
 const Dummy_Expense=[
   {
      id:'e1',
      title1:'Toilet Paper',
-     amount:'788',
+     amount:43,
      date:new Date(),
      location: 'delhi'
   },{
     id:'e2',
     title1:'Toilet Paper',
-    amount:'788',
+    amount:343,
     date:new Date(),
     location: 'mumbai'
  },
  {
   id:'e3',
   title1:'Food',
-  amount:'788',
+  amount:44,
   date:new Date(),
   location: 'new delhi'
 },
 {
 id:'e4',
 title1:'car Insurance',
-amount:'1000',
+amount:554,
 date:new Date("2020"),
 location: 'utterpardesh'
 },
 {
 id:'e5',
 title1:'New desk',
-amount:'400',
+amount:344,
 date:new Date(),
 location: 'lucknow'
 }
@@ -83,7 +83,7 @@ console.log(Dummy_Expense)
 
     <h1>Expense Items</h1>
     <ExpensesFilter Selected={FilterYear} onChangeFilter={onFilterHendeler}></ExpensesFilter>
-    
+    <ExpensesChart expenses={filteredExpnses} />
     
     <ExpenseList items={filteredExpnses}/>
     {/* {filteredExpnses.length===0 && <p>No Expense Found</p>}   

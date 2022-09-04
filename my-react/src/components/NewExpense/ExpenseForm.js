@@ -47,7 +47,8 @@ return     <form>
             </div>
             <div>
             <label>Amount</label>
-            <input onChange={amountChangeHandler}value={enteredAmount} type="number"></input>
+            <input onChange={amountChangeHandler}value={enteredAmount} type="number" min="0.01"
+                  step="0.01"></input>
             </div>
             <div>
             <label>Date</label>
@@ -55,10 +56,10 @@ return     <form>
             </div>
             </div>
             <button onClick={submit} type="submit">SUBMIT</button>
+            <button onClick={props.onCancel}>Cancel</button>
         </form>
     
 }
 
 
 export default ExpenseForm
-
